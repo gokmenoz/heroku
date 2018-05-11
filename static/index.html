@@ -3,13 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Loan Selection</title>
-        <script src="/js/d3.v2.js"></script>
-        <script src="/js/d3.slider.js"></script>
-        <script src="/js/nv.d3.js"></script>
-        <script src="/js/graph.js"></script>
-        <link rel="stylesheet" href="/static/d3.slider.css" />
-        <link rel="stylesheet" href="/static/nv.d3.css" />
-        <link rel="stylesheet" href="/static/style.css" />
     </head>
     <body>
         <div class="wrapper">
@@ -34,36 +27,7 @@
             <h2>
                 The Model
             </h2>
-
-            <img class="center" src="static/img/plot1.png" />
-
-            <h2>
-                The Results
-            </h2>
-            <img class="center" src="static/img/IRR.png" align="middle" />
-            <h2>
-                Select your loan-score cutoff below
-            </h2>
-            Limit portfolio to upper <span id="slider1text">90</span>th centile of expected returns: 
-            <div id="slider1"></div>
-            <div id="chart"><svg ></svg></div>
-            This portfolio requires a minimum investment of $
-            <span id="minprincipal">55250</span>
-            <script>
-                d3.select("#slider1").call(
-                        d3.slider().axis(false)
-                        .on("slide", function(evt, value) {
-                            d3.select('#slider1text').text(value);
-                            d3.select('#chart svg')
-                                .datum(transformData(global_data, value))
-                                .call(chart);
-                            d3.select("#minprincipal")
-                                .text(global_data[value.toString()]
-                                    .count * 25);
-                        })
-                        .value(90)
-                        .step(10).min(50).max(90))
-            </script>
+            <img class="center" src="static/img/accuracy.png" />
         </div>
     </body>
 </html>
